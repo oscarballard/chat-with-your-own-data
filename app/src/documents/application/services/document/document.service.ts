@@ -2,7 +2,8 @@ import { Inject, Injectable } from '@nestjs/common';
 import { DocumentRepository } from '../../../domain/document.repository';
 import { Document } from '../../../domain/document.entity';
 import { v4 as uuidv4 } from 'uuid';
-import * as pdfParse from 'pdf-parse';
+import pdfParse from 'pdf-parse';
+
 
 @Injectable()
 export class DocumentService {

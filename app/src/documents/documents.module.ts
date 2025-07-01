@@ -9,6 +9,7 @@ import { ChromaDocumentQueryRepository } from './infrastructure/adapters/chroma-
 
 @Module({
   controllers: [DocumentsController],
+  exports: [DocumentService, DocumentQueryService],
   providers: [
     DocumentService,
     DocumentQueryService,
@@ -21,6 +22,10 @@ import { ChromaDocumentQueryRepository } from './infrastructure/adapters/chroma-
     {
       provide: 'DocumentQueryRepository',
       useClass: ChromaDocumentQueryRepository,
+    },
+    {
+      provide: 'CHROMA_URL',
+      useValue: process.env.CHROMA_URL || 'http://localhost:8000', // ⚠️ puedes usar ConfigService si lo prefieres
     },
   ],
 })

@@ -1,0 +1,1 @@
+{"version":3,"file":"domain-bad-request.exception.js","sourceRoot":"","sources":["../../../src/common/exceptions/domain-bad-request.exception.ts"],"names":[],"mappings":";;;AAAA,2CAAqD;AAErD,MAAa,yBAA0B,SAAQ,4BAAmB;IAChE,YAAY,OAAe;QACzB,KAAK,CAAC,kBAAkB,OAAO,EAAE,CAAC,CAAC;IACrC,CAAC;CACF;AAJD,8DAIC"}

@@ -17,12 +17,16 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+  "migrate:data": "ts-node src/migration/migrate-data.ts",
+  "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d src/common/config/database/data-source.ts",
+  "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d src/common/config/database/data-source.ts",
+  "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d src/common/config/database/data-source.ts"
   },
   "dependencies": {
     "@llamaindex/chroma": "^0.0.26",
     "@llamaindex/core": "^0.6.12",
-    "@llamaindex/huggingface": "^0.1.16",
+    "@llamaindex/openai": "^0.4.6",
     "@nestjs/common": "^10.0.0",
     "@nestjs/core": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
@@ -32,8 +36,9 @@
     "dotenv": "^17.0.0",
     "llamaindex": "^0.11.11",
     "openai": "^5.8.2",
+    "pdf-parse": "^1.1.1",
     "pg": "^8.16.3",
-    "reflect-metadata": "^0.2.0",
+    "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
     "swagger-ui-express": "^5.0.1",
     "typeorm": "^0.3.25"
@@ -44,7 +49,7 @@
     "@nestjs/testing": "^10.0.0",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.2",
-    "@types/node": "^20.3.1",
+    "@types/node": "^24.0.8",
     "@types/supertest": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
@@ -57,7 +62,7 @@
     "supertest": "^7.0.0",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.4.3",
-    "ts-node": "^10.9.1",
+    "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.1.3"
   },
